@@ -1,0 +1,15 @@
+.page-header.navbar .page-logo .logo-default {
+    margin: 19px 10px 0 !important;
+}
+.nopadding{
+	padding: 0px !important;
+}
+
+.quick-sidebar-toggler > a:hover {
+    color: #a4b4bb;
+}
+
+li.quick-sidebar-toggler > a {
+    color: #c0cddc;
+    font-size: 16px;
+}
