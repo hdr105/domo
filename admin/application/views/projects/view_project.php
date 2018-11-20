@@ -74,8 +74,8 @@ if ($this->session->flashdata("success") != "") {
                             <td><?= $value->parent_cat_name ?></td>
                             <td><?= $value->sub_cat_name ?></td>
 
-                            <td><a download=""
-                                   href="<?php echo base_url() . PROJECT_IMAGE_UPLOAD_PATH . $value->project_image ?>">View
+                            <td><a
+                                    href="#mydiv<?php echo $i; ?>" data-group="mygroup" class="badge1 badge yes-cursor html5lightbox" data-slideshadow="true" data-fullscreenmode="true" data-transition="slide" data-width="800" data-height="400" title="">View
                                     Image</a></td>
 
                             <td>
@@ -87,7 +87,33 @@ if ($this->session->flashdata("success") != "") {
                             </td>
 
                         </tr>
+                         <div id="mydiv<?php echo $i; ?>" style="display:none;" class="html5gallery" data-slideshadow="true" data-skin="gallery" ddata-fullscreenmode="true" data-transition="slide" data-width="800" data-height="400" >
+                            <?php 
+    
+                                $project_images =  json_decode($value->project_image); 
+                                $array_check = is_array($project_images);
+                                if($array_check)
+                                {
+                                   
+                                    foreach ($project_images as $project_image) {
+                                        
+                                        ?>
 
+                                        <a href="<?php echo base_url() . PROJECT_IMAGE_UPLOAD_PATH . $project_image; ?>" class="image_tn html5lightbox" data-group="mygroup">
+                                            <img src="<?php echo base_url() . PROJECT_IMAGE_UPLOAD_PATH . $project_image; ?>">
+                                        </a>
+                                        <?php
+                                    }
+                                }
+                                else
+                                {
+                                    ?>
+
+                                     <a href="<?php echo base_url() . PROJECT_IMAGE_UPLOAD_PATH . $value->project_image; ?>"><img src="<?php echo base_url() . PROJECT_IMAGE_UPLOAD_PATH . $value->project_image; ?>"></a>
+                                    <?php
+                                }
+                                ?>
+                       </div>
 
                         <?php
                         $i++;

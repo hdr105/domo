@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://'. $_SERVER['HTTP_HOST']. "/layout/admin/";
-$config['base_url'] = 'http://'. $_SERVER['HTTP_HOST']. "/domo_2/admin/";
+$config['base_url'] = 'http://'. $_SERVER['HTTP_HOST']. "/domo/admin/";
 
 
 /*
